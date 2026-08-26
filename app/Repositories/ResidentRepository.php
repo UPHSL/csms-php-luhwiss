@@ -2,11 +2,19 @@
 
 namespace App\Repositories;
 
-/**
- * Repository placeholder for resident persistence operations.
- *
- * Functionality will be introduced through future sprint tickets.
- */
+use App\Models\Resident;
+
 class ResidentRepository
 {
+    public function save(Resident $resident): Resident
+    {
+        $resident->save();
+
+        return $resident;
+    }
+
+    public function findById(int $id): ?Resident
+    {
+        return Resident::find($id);
+    }
 }
