@@ -2,17 +2,30 @@
 
 namespace App\Models;
 
-class Resident
-{
-    const STATUS_ACTIVE = 'Active';
+use Illuminate\Database\Eloquent\Model;
 
-    public function __construct(
-        public readonly ?int $id,
-        public readonly string $firstName,
-        public readonly string $lastName,
-        public readonly string $address,
-        public readonly string $contactNumber,
-        public readonly string $email,
-        public readonly string $status = self::STATUS_ACTIVE,
-    ) {}
+class Resident extends Model
+{
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'address',
+        'contact_number',
+        'email',
+        'status',
+    ];
+
+    /**
+     * The model's default attribute values.
+     *
+     * @var array<string, mixed>
+     */
+    protected $attributes = [
+        'status' => 'Active',
+    ];
 }
