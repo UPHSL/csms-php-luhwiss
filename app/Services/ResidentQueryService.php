@@ -23,9 +23,9 @@ class ResidentQueryService
     /**
      * @return Collection<int, Resident>
      */
-    public function searchResidents(string $searchTerm): Collection
+    public function searchResidents(?string $searchTerm): Collection
     {
-        $normalizedSearchTerm = trim($searchTerm);
+        $normalizedSearchTerm = trim($searchTerm ?? '');
 
         if ($normalizedSearchTerm === '') {
             return $this->listResidents();
