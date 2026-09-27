@@ -50,6 +50,20 @@ class ResidentRepository
             ->get();
     }
 
+    public function deactivateById(int $id): ?Resident
+    {
+        $resident = $this->findById($id);
+
+        if ($resident === null) {
+            return null;
+        }
+
+        $resident->status = 'Inactive';
+        $resident->save();
+
+        return $resident;
+    }
+
     public function update(Resident $resident, array $data): Resident
     {
         $resident->fill($data);
