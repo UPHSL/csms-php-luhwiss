@@ -50,6 +50,14 @@ class ResidentRepository
             ->get();
     }
 
+    public function update(Resident $resident, array $data): Resident
+    {
+        $resident->fill($data);
+        $resident->save();
+
+        return $resident;
+    }
+
     private function orderedQuery(): Builder
     {
         return Resident::query()
