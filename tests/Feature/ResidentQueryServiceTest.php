@@ -115,6 +115,17 @@ class ResidentQueryServiceTest extends TestCase
         );
     }
 
+    public function test_null_search_returns_the_normal_listing(): void
+    {
+        $this->persistResident(['first_name' => 'Ana', 'last_name' => 'Santos']);
+        $this->persistResident(['first_name' => 'Juan', 'last_name' => 'Cruz']);
+
+        $this->assertSame(
+            $this->service->listResidents()->pluck('id')->all(),
+            $this->service->searchResidents(null)->pluck('id')->all()
+        );
+    }
+
     public function test_search_ignores_leading_and_trailing_spaces(): void
     {
         $resident = $this->persistResident(['first_name' => 'Juan']);
