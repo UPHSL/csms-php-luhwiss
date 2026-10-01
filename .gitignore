@@ -1,4 +1,7 @@
 *.log
+*.sqlite
+*.sqlite3
+*.db
 .DS_Store
 .env
 .env.backup
@@ -6,6 +9,7 @@
 .phpactor.json
 .phpunit.result.cache
 /.codex
+/.serena/
 /.cursor/
 /.idea
 /.nova
