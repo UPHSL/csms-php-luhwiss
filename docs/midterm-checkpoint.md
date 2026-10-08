@@ -34,7 +34,7 @@ Purpose: Documents the implementation, transition rules, changed files, real pro
 
 ## Problem I Encountered
 
-While verifying the project, `php artisan test` and PHPUnit with the XML bootstrap reported that they could not open `vendor/autoload.php`. The file existed and PHP could load it directly with `require`, but PHPUnit's bootstrap readability check still failed in this Windows/Codex environment. I investigated by checking that `vendor/autoload.php` existed, reading its first lines, confirming PHP could `require` it, and checking the file permissions. To keep verification meaningful, I ran PHPUnit through `vendor/bin/phpunit` with `--no-configuration` and manually supplied the same testing environment values from `phpunit.xml`, which allowed the Composer proxy to load autoload and run the test suites correctly.
+While verifying the project, `php artisan test` and PHPUnit with the XML bootstrap reported that they could not open `vendor/autoload.php`. The file existed and PHP could load it directly with `require`, but PHPUnit's bootstrap readability check still failed in my Windows development environment. I investigated by checking that `vendor/autoload.php` existed, reading its first lines, confirming PHP could `require` it, and checking the file permissions. To keep verification meaningful, I ran PHPUnit through `vendor/bin/phpunit` with `--no-configuration` and manually supplied the same testing environment values from `phpunit.xml`, which allowed the Composer proxy to load autoload and run the test suites correctly.
 
 ## My Student-Designed Test
 
@@ -46,4 +46,4 @@ Why I Added This Test: I added this test to confirm that the status update targe
 
 ## Tools and References Used
 
-I used PHP, Laravel, Composer, PHPUnit, Git, PowerShell, and the existing project tests and code as references. I also used Codex as an AI coding assistant to inspect the repository, implement the T10 workflow, write tests, and prepare this checkpoint document. I remain responsible for understanding and explaining the submitted implementation.
+I used PHP, Laravel, Composer, PHPUnit, Git, PowerShell, and the existing project tests and code as references. I also used Codex to help explain parts of the task and code that caused confusion. I remain responsible for understanding and explaining the submitted implementation.
