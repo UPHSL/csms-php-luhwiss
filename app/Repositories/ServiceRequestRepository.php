@@ -17,4 +17,14 @@ class ServiceRequestRepository
     {
         return ServiceRequest::find($id);
     }
+
+    public function updateStatus(
+        ServiceRequest $serviceRequest,
+        string $status
+    ): ServiceRequest {
+        $serviceRequest->status = $status;
+        $serviceRequest->save();
+
+        return $serviceRequest;
+    }
 }
