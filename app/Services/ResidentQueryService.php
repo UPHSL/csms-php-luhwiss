@@ -20,6 +20,11 @@ class ResidentQueryService
         return $this->repository->findAll();
     }
 
+    public function viewResident(int $id): ?Resident
+    {
+        return $this->repository->findById($id);
+    }
+
     /**
      * @return Collection<int, Resident>
      */
