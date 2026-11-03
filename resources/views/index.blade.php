@@ -118,6 +118,8 @@
         Environment status: Ready
     </p>
 
+    <p><a href="{{ route('residents.index') }}">Resident Management</a></p>
+
 </div>
 
 </body>
