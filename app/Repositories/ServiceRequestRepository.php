@@ -20,6 +20,24 @@ class ServiceRequestRepository
         return ServiceRequest::find($id);
     }
 
+    public function countAll(): int
+    {
+        return ServiceRequest::query()->count();
+    }
+
+    public function countByStatus(string $status): int
+    {
+        return ServiceRequest::query()->where('status', $status)->count();
+    }
+
+    /**
+     * @return Collection<int, ServiceRequest>
+     */
+    public function findRecent(int $limit): Collection
+    {
+        return $this->orderedQuery()->limit($limit)->get();
+    }
+
     /**
      * @return Collection<int, ServiceRequest>
      */

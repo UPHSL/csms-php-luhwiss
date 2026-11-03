@@ -12,6 +12,7 @@
             <a class="brand" href="{{ url('/') }}"><span class="brand-mark" aria-hidden="true">C</span> CSMS</a>
             <span class="site-name">Community Services Management System</span>
             <nav aria-label="Main navigation">
+                <a href="{{ route('dashboard') }}">Dashboard</a>
                 <a href="{{ route('residents.index') }}">Resident Management</a>
                 <a href="{{ route('service-requests.index') }}">Service Request Management</a>
             </nav>

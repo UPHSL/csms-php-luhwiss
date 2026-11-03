@@ -20,6 +20,16 @@ class ResidentRepository
         return Resident::find($id);
     }
 
+    public function countAll(): int
+    {
+        return Resident::query()->count();
+    }
+
+    public function countByStatus(string $status): int
+    {
+        return Resident::query()->where('status', $status)->count();
+    }
+
     /**
      * @return Collection<int, Resident>
      */
