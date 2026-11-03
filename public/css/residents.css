@@ -68,6 +68,11 @@ th, td { padding: 16px 14px; border-top: 1px solid var(--line); vertical-align: 
 .field-error { color: #9a3025; font-size: 13px; margin-top: 7px; }
 .site-footer { padding: 22px; text-align: center; color: var(--muted); font-size: 12px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.dashboard-section { margin-bottom: 28px; }
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 16px 0; }
+.metric { padding: 20px 24px; }
+.metric dt { color: var(--muted); font-weight: 600; }
+.metric-value { margin: 8px 0 0; font-size: 32px; line-height: 1.2; font-weight: 700; }
 @media (max-width: 760px) {
     .header-content { flex-wrap: wrap; gap: 12px; padding: 16px 18px; }
     .site-name { display: none; }
