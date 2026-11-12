@@ -10,7 +10,7 @@
     <header class="site-header">
         <div class="header-content">
             <a class="brand" href="{{ url('/') }}"><span class="brand-mark" aria-hidden="true">C</span> CSMS</a>
-            <span class="site-name">Community Services Management System</span>
+            <span class="site-name">{{ config('csms.name') }}</span>
             <nav aria-label="Main navigation">
                 <a href="{{ route('dashboard') }}">Dashboard</a>
                 <a href="{{ route('residents.index') }}">Resident Management</a>
@@ -24,6 +24,6 @@
         @endif
         @yield('content')
     </main>
-    <footer class="site-footer">Community Services Management System &middot; Resident services</footer>
+    <footer class="site-footer">{{ config('csms.name') }} &middot; Resident services &middot; v{{ config('csms.version') }}</footer>
 </body>
 </html>

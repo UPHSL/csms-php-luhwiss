@@ -21,7 +21,7 @@ class CsmsApplicationTest extends TestCase
         $response->assertSee('Community Services Management System');
         $response->assertSee('Sprint 0 - Developer Onboarding');
         $response->assertSee('PHP with Laravel');
-        $response->assertSee('0.1.0');
+        $response->assertSee('1.0.0');
     }
 
     public function test_health_endpoint_returns_expected_payload(): void
@@ -30,10 +30,10 @@ class CsmsApplicationTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJson([
+            ->assertExactJson([
                 'status' => 'ok',
                 'application' => 'Community Services Management System',
-                'version' => '0.1.0',
+                'version' => '1.0.0',
             ]);
     }
 
