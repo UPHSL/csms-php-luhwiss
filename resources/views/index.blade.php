@@ -109,7 +109,7 @@
 
         <div class="detail">
             <strong>Version</strong>
-            <span>{{ $version }}</span>
+            <span>v{{ $version }}</span>
         </div>
 
     </div>
