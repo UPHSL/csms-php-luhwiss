@@ -10,8 +10,8 @@ class HealthController extends Controller
     {
         return response()->json([
             'status' => 'ok',
-            'application' => 'Community Services Management System',
-            'version' => '0.1.0',
+            'application' => config('csms.name'),
+            'version' => config('csms.version'),
         ]);
     }
 }

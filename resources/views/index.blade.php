@@ -109,7 +109,7 @@
 
         <div class="detail">
             <strong>Version</strong>
-            <span>{{ $version }}</span>
+            <span>v{{ $version }}</span>
         </div>
 
     </div>
@@ -117,6 +117,8 @@
     <p class="status">
         Environment status: Ready
     </p>
+
+    <p><a href="{{ route('residents.index') }}">Resident Management</a></p>
 
 </div>
 
